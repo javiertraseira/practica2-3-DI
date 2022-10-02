@@ -15,7 +15,7 @@ Mejorar el ejercicio anterior para que haya exista un botón **agregar todo** qu
 
 Añade otro *combobox* para poder elegir curso:
 - Según esté elegido *Primero* o *Segundo* deberá agregar al principio del nombre del módulo a introducir 1º o 2º.
-- Según esté seleccionado uno u otro curso deberá de cargar todos los módulos de dicho curso seleccionado al presionar el botón añadir todos.
+- Según esté seleccionado uno u otro curso deberá de cargar todos los módulos de dicho curso seleccionado, al presionar el botón *añadir todos*.
 
 ![](media/9d5dec85d5a68aeb8e5ba53d5234234.png)
  
