@@ -4,6 +4,8 @@
 
 Crea una ventana que permita agregar elementos al listado de un *combobox* al darle al botón añadir.
 
+No debe permitir agregar duplicados ya existentes en la lista.
+
 ![](media/9d5dec85d5a68aeb8e5ba53d5fd897f7.png)
 
 
