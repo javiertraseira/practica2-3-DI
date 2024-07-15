@@ -26,7 +26,7 @@ Añade otro *combobox* para poder elegir curso:
 ![](media/9d5dec85d5a68aeb8e5ba53d5234234.png)
 
 
-## Pruebas 1  
+## Pruebas (testing) 
 
 ### Tabla pruebas parte 1 y 2
 
