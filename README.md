@@ -19,11 +19,11 @@ Averigua la forma de cambiar el *Look and Feel* de la ventana por defecto al que
 
 | ID Caso Prueba | Descripción Caso de Prueba         | Entrada                   | Salida Esperada                                                     | Resultado   |
 |----------------|-----------------------------------|---------------------------|---------------------------------------------------------------------|-------------|
-| 01             | Comprobación del botón "agregar"   | Texto del campo módulo    | Se agrega el texto del módulo al combobox                           | OK/No cumple|
-| 02             | Validación de duplicados           | Texto del campo módulo    | No permite agregar un campo duplicado y avisa con un mensaje modal  | OK/No cumple|
-| 03             | Botón "agregar todo"               | N/D                       | Agrega todos los módulos del curso al combobox                       | OK/No cumple|
-| 04             | Botón "borrar todo"                | N/D                       | Borra todo el contenido del combobox                                 | OK/No cumple|
-| 05             | Look and feel de la aplicación     | N/D                       | Se ha modificado el look and feel por defecto                        | OK/No cumple|
+| 01             | Comprobación del botón "agregar"   | Texto del campo módulo    | Se agrega el texto del módulo al combobox.                           | OK/No cumple|
+| 02             | Validación de duplicados           | Texto del campo módulo    | No permite agregar un campo duplicado y avisa con un mensaje modal.  | OK/No cumple|
+| 03             | Botón "agregar todo"               | N/D                       | Agrega todos los módulos del curso al combobox.                       | OK/No cumple|
+| 04             | Botón "borrar todo"                | N/D                       | Borra todo el contenido del combobox.                                 | OK/No cumple|
+| 05             | Look and feel de la aplicación     | N/D                       | Se ha modificado el look and feel por defecto.                        | OK/No cumple|
 
 ## Parte 3
 
