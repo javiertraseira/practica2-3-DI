@@ -33,4 +33,13 @@ Añade otro *combobox* para poder elegir curso:
 - Agrega un botón de borrar un solo elemento seleccionado del listado de módulos usando un icono de una papelera.
 
 ![](media/9d5dec85d5a68aeb8e5ba53d5234234.png)
+
+
+## Pruebas 2 (Testing)
+
+| ID Caso Prueba | Descripción Caso de Prueba      | Entrada                  | Salida Esperada                                          | Resultado   |
+|----------------|--------------------------------|--------------------------|----------------------------------------------------------|-------------|
+| 01             | Selección combobox curso        | Seleccionar curso combobox| Agrega el curso 1º/2º al inicio del texto en el combobox principal | OK/No cumple|
+| 02             | Botón "agregar todo"            | Seleccionar curso combobox| Agrega todos los módulos del curso seleccionado en el combobox | OK/No cumple|
+| 03             | Botón "borrar"                  | Seleccionar curso combobox| Borra el curso del combobox que esté seleccionado         | OK/No cumple|
  
