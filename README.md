@@ -1,5 +1,7 @@
 # Práctica 2.3 – Elemento combobox
 
+Crea un proyecto llamado *practica2-3* en la carpeta SOL de github. Puedes utilizar *branches* para delimitar los cambios que vayas haciendo.
+
 ## Parte 1
 
 Crea una ventana que permita agregar elementos al listado de un *combobox* al darle al botón añadir.
