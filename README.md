@@ -36,9 +36,8 @@ En esta se va a mejorar la interactividad y la personalización de la aplicació
         - FlatLaf Dark (tema oscuro moderno).
 2. **Gestión de cursos y módulos**
     - Añade otro combobox para seleccionar el curso: Primero o Segundo.
-    - Comportamiento esperado:
-        - Cuando se agregue un módulo de forma manual, el nombre debe incluir al principio 1º o 2º según el curso seleccionado.
-        - El botón Agregar todos debe cargar únicamente los módulos correspondientes al curso elegido.
+    - Cuando se agregue un módulo de forma manual, el nombre debe incluir al principio 1º o 2º según el curso seleccionado.
+    - El botón Agregar todos debe cargar únicamente los módulos correspondientes al curso elegido.
 3. **Eliminación de elementos individuales**
     - Agrega un botón que permita borrar únicamente el módulo seleccionado del combobox de módulos.
     - Este botón debe mostrar un icono de papelera en lugar de texto para representar de manera visual la acción de eliminar.
