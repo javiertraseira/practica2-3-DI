@@ -20,7 +20,7 @@ Se va a mejorar el ejercicio anterior con nuevos botones y un Look and Feel mode
 - Agrega un botón Agregar todo que incluya de golpe todos los módulos del curso en el combobox.
 - Agrega un botón Borrar todo que vacíe el combobox.
 - Cambiar el **Look and Feel** de la ventana por defecto para que utilice **flatLaf**, una librería moderna actual que permite dar un aspecto profesional y moderno a las interfaces Swing:
-    - Para ello deberás añadir a tu fichero `pom.xml` las líneas necesarias para agregar dependencias buscando en el [respositorio oficial de Maven](https://mvnrepository.com/) la última versión de flaLaf (Flat Look and Feel)
+    - Para ello deberás añadir a tu fichero `pom.xml` las líneas necesarias para agregar dependencias buscando en el [repositorio oficial de Maven](https://mvnrepository.com/) la última versión de flaLaf (Flat Look and Feel).
     - Después deberás de agregar el *import* y utilizarlo en el *main* de la clase, editando el código ya propuesto de la línea *Look and feel setting code (optional)* para usar flatLaf.
  
 
