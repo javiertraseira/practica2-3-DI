@@ -1,4 +1,4 @@
-# Práctica 2.3 – Elemento combobox
+# Práctica 2.3 – Elementos combobox
 
 El objetivo es aprender a manipular modelos de datos en un *combobox*, controlar duplicados y personalizar la interfaz gráfica mediante eventos así como aplicar un Look and Feel moderno mediante una librería externa en *Maven*.
 
