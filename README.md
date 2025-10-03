@@ -28,20 +28,20 @@ Mejora el ejercicio anterior:
 
 En esta parte vamos a **mejorar la interactividad y la personalización** de la aplicación agregando nuevas funcionalidades:
 
-1. Selección de Look and Feel
-- Crea un nuevo combobox que permita elegir entre tres estilos visuales para la aplicación:
-    - Clásico (Look and Feel por defecto de Swing, Nimbus o el del sistema operativo).
-    - FlatLaf Light (tema claro moderno).
-    - FlatLaf Dark (tema oscuro moderno).
-2. Gestión de cursos y módulos
-- Añade otro combobox para seleccionar el curso: Primero o Segundo.
-- Comportamiento esperado:
-    - Cuando se agregue un módulo de forma manual, el nombre debe incluir al principio 1º o 2º según el curso seleccionado.
-    - El botón Agregar todos debe cargar únicamente los módulos correspondientes al curso elegido.
-3. Eliminación de elementos individuales
+1. **Selección de Look and Feel**
+    - Crea un nuevo combobox que permita elegir entre tres estilos visuales para la aplicación:
+        - Clásico (Look and Feel por defecto de Swing, Nimbus o el del sistema operativo).
+        - FlatLaf Light (tema claro moderno).
+        - FlatLaf Dark (tema oscuro moderno).
+2. **Gestión de cursos y módulos**
+    - Añade otro combobox para seleccionar el curso: Primero o Segundo.
+    - Comportamiento esperado:
+        - Cuando se agregue un módulo de forma manual, el nombre debe incluir al principio 1º o 2º según el curso seleccionado.
+        - El botón Agregar todos debe cargar únicamente los módulos correspondientes al curso elegido.
+3. **Eliminación de elementos individuales**
     - Agrega un botón que permita borrar únicamente el módulo seleccionado del combobox de módulos.
     - Este botón debe mostrar un icono de papelera en lugar de texto para representar de manera visual la acción de eliminar.
-    
+
 ![](media/9d5dec85d5a68aeb8e5ba53d5234234.png)
 
 
