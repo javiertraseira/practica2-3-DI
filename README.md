@@ -1,4 +1,4 @@
-# Práctica 2.4 – Elementos interfaz mixta
+# Práctica 2.3 – Elementos interfaz mixta
 
 El objetivo de esta práctica es profundizar en el manejo de los componentes clásicos de Swing y en la gestión de eventos para construir una interfaz gráfica interactiva y simétrica, aplicando además el uso de la librería FlatLaf para personalizar la apariencia visual.
 
