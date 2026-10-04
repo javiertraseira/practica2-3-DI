@@ -1,4 +1,4 @@
-# Práctica 2.3 – Elementos interfaz mixta
+# Práctica 2.3 – Componentes gráficos y eventos
 
 El objetivo de esta práctica es profundizar en el uso de componentes gráficos y en la gestión de eventos, creando una interfaz formada por dos zonas que deberán mantenerse sincronizadas.
 
