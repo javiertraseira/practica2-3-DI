@@ -247,27 +247,81 @@ Al pulsarlo deberá mostrarse un `JOptionPane` con una breve explicación sobre 
 
 ## Documentación
 
+Añade a una carpeta `docs\` del repositorio un fichero:
+
+```text
+README.md
+```
+
+Que incluya como mínimo:
+
+- Nombre del proyecto
+- Descripción: Breve explicación de la aplicación desarrollada.
+- Listado de componentes swing utilizados.
+- Eventos utilizados
+- Funcionalidades: Lista de las principales características implementadas.
+- Capturas de la aplicación.
+
+Incluye una tabla similar a la siguiente:
+
+| Componente | Evento o listener utilizado | Función |
+|---|---|---|
+| `JTextField` | `DocumentListener` | Detectar cambios mientras se escribe |
+| `JButton` | `ActionListener` | Detectar pulsaciones |
+| `JCheckBox` | `ItemListener` | Detectar cambios de estado |
+| `JSlider` | `ChangeListener` | Detectar cambios de valor |
+
 
 
 ## Pruebas (testing) 
 
-| ID Caso Prueba | Descripción Caso de Prueba                       | Entrada / Acción                                       | Salida Esperada                                                                                 | Resultado    |
-| -------------- | ------------------------------------------------ | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ------------ |
-| 01             | Verificar campos de texto (`JTextField`)         | Escribir texto en el primer campo                      | Se duplica en la otra mitad en orden inverso                                                    | OK/No cumple |
-| 02             | Verificar campos de texto (`JTextField`)         | Escribir texto en el segundo campo                     | Se duplica igual en la otra mitad                                                               | OK/No cumple |
-| 03             | Verificar campo contraseña (`JPasswordField`)    | Escribir una contraseña                                | Se duplica en la otra mitad (oculta). Permite mostrar u ocultar el texto con el botón integrado | OK/No cumple |
-| 04             | Verificar botones (`JButton`)                    | Pulsar los botones                                     | Su acción se refleja en el botón duplicado                                                      | OK/No cumple |
-| 05             | Verificar botón redondo (`FlatLaf`)              | Observar el botón redondo                              | Tiene forma redonda según la propiedad FlatLaf                                                  | OK/No cumple |
-| 06             | Verificar botón de ayuda (`FlatLaf`)             | Pulsar el botón ayuda                                  | Muestra un icono de ayuda y/o mensaje emergente                                                 | OK/No cumple |
-| 07             | Verificar Radio Buttons (`JRadioButton`)         | Cambiar la selección de un grupo de radio buttons      | Se duplica en la otra mitad y se respeta la exclusividad de grupo                               | OK/No cumple |
-| 08             | Verificar Casillas de verificación (`JCheckBox`) | Marcar y desmarcar una casilla                         | Se duplica el estado en la otra mitad                                                           | OK/No cumple |
-| 09             | Verificar Listado (`JComboBox`)                  | Cambiar el valor seleccionado                          | Se actualiza en la otra mitad                                                                   | OK/No cumple |
-| 10             | Verificar Spinner (`JSpinner`)                   | Cambiar el valor                                       | Se duplica el valor en la otra mitad                                                            | OK/No cumple |
-| 11             | Verificar Barra deslizadora (`JSlider`)          | Deslizar la barra                                      | Se duplica en la otra mitad y se muestra el porcentaje                                          | OK/No cumple |
-| 12             | Verificar `JSplitPane`                           | Cambiar el tamaño de las divisiones                    | Se refleja el color o posición en ambas mitades                                                 | OK/No cumple |
-| 13             | Verificar Menú “Archivo”                         | Desplegar el menú                                      | Se muestran las opciones correspondientes                                                       | OK/No cumple |
-| 14             | Verificar Menú “Edición → Borrar todo”           | Seleccionar “Borrar todo”                              | Todos los campos y selecciones se restablecen                                                   | OK/No cumple |
-| 15             | Verificar Barra de estado (`JPanel` inferior)    | Realizar distintas acciones                            | Muestra mensajes contextuales (validación, acciones, etc.)                                      | OK/No cumple |
-| 16             | Validación campo correo (incorrecto)             | Escribir correo sin formato válido                     | Se muestra borde rojo                                                                           | OK/No cumple |
-| 17             | Validación campo correo (correcto)               | Escribir correo con formato correcto (con @ y dominio) | Borde normal, se marca checkbox verde y muestra mensaje en barra de estado                      | OK/No cumple |
+# Comprobación final
+
+Antes de entregar la práctica comprueba:
+
+- [ ] El proyecto es Maven.
+- [ ] FlatLaf está añadido correctamente mediante Maven.
+- [ ] El proyecto compila y se ejecuta sin errores.
+- [ ] Los componentes utilizados desde código tienen nombres descriptivos.
+- [ ] La interfaz contiene los componentes requeridos.
+- [ ] La interfaz está organizada en una zona superior y una zona inferior.
+- [ ] Los cambios realizados en la zona superior se sincronizan automáticamente con la zona inferior.
+- [ ] El primer campo de texto se muestra en orden inverso.
+- [ ] Se utilizan al menos cuatro tipos diferentes de eventos o listeners.
+- [ ] Los `JRadioButton` funcionan mediante `ButtonGroup`.
+- [ ] El correo se valida en tiempo real.
+- [ ] La barra de estado muestra mensajes correctamente.
+- [ ] El menú Archivo permite cerrar la aplicación.
+- [ ] El menú Edición permite reiniciar los componentes.
+- [ ] Se utilizan métodos auxiliares para organizar el código.
+- [ ] El campo contraseña utiliza una propiedad específica de FlatLaf.
+- [ ] El botón redondeado utiliza propiedades de FlatLaf.
+- [ ] El botón de ayuda funciona correctamente.
+- [ ] El `README.md` está actualizado.
+- [ ] Los casos de prueba se han ejecutado y documentado.
+- [ ] Las ramas de trabajo se han integrado correctamente en `main`.
+
+En todos los ejercicios debe de rellenarse una tabla con **casos de prueba** mínimos que cumpla el ejercicio dentro de la carpeta llamada *TEST* del repositorio:
+
+| ID | Caso de prueba | Entrada / Acción | Resultado esperado | Resultado |
+|---|---|---|---|---|
+| 01 | Primer campo de texto | Escribir `Hola` en la zona superior | En la zona inferior aparece `aloH` | OK / No cumple |
+| 02 | Segundo campo de texto | Escribir texto | Se copia exactamente en el campo correspondiente | OK / No cumple |
+| 03 | Campo contraseña | Introducir contraseña | Se sincroniza manteniéndose oculta | OK / No cumple |
+| 04 | Mostrar contraseña | Activar botón integrado | La contraseña puede mostrarse y ocultarse | OK / No cumple |
+| 05 | Radio buttons | Seleccionar una opción | Se replica la selección y se mantiene la exclusividad | OK / No cumple |
+| 06 | Checkboxes | Marcar o desmarcar | El estado se replica en el componente correspondiente | OK / No cumple |
+| 07 | JComboBox | Cambiar selección | El segundo `JComboBox` selecciona el mismo elemento | OK / No cumple |
+| 08 | JSpinner | Cambiar valor | El segundo `JSpinner` muestra el mismo valor | OK / No cumple |
+| 09 | JSlider | Cambiar valor | El segundo `JSlider` muestra el mismo valor | OK / No cumple |
+| 10 | Botones | Pulsar cada botón | La acción definida se refleja correctamente | OK / No cumple |
+| 11 | Correo incorrecto | Introducir formato no válido | Se muestra borde rojo y mensaje de error | OK / No cumple |
+| 12 | Correo correcto | Introducir correo válido | Se restaura el borde, se marca el checkbox y se actualiza el estado | OK / No cumple |
+| 13 | Menú Salir | Seleccionar `Archivo → Salir` | La aplicación se cierra correctamente | OK / No cumple |
+| 14 | Borrar todo | Seleccionar `Edición → Borrar todo` | Todos los componentes vuelven a su estado inicial | OK / No cumple |
+| 15 | Botón redondeado | Observar el componente | Se muestra con el estilo FlatLaf configurado | OK / No cumple |
+| 16 | Botón ayuda | Pulsar el botón | Se muestra un mensaje de ayuda | OK / No cumple |
+
+Añade al final cualquier incidencia encontrada durante las pruebas.
+
 
