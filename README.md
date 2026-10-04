@@ -1,14 +1,38 @@
 # Práctica 2.3 – Elementos interfaz mixta
 
-El objetivo de esta práctica es profundizar en el manejo de los componentes clásicos de Swing y en la gestión de eventos para construir una interfaz gráfica interactiva y simétrica, aplicando además el uso de la librería FlatLaf para personalizar la apariencia visual.
+El objetivo de esta práctica es profundizar en el uso de componentes gráficos y en la gestión de eventos, creando una interfaz formada por dos zonas que deberán mantenerse sincronizadas.
 
-Crea un proyecto llamado *practica2-4* en la carpeta SOL de github. Utiliza *branches* para delimitar los cambios que vayas haciendo.
+Durante la práctica se trabajará con distintos tipos de controles, diferentes eventos y listeners, menús, validación en tiempo real y algunas propiedades específicas de FlatLaf.
 
-## Parte 1
+## Preparación del proyecto
 
-Crear una interfaz mixta utilizando *FlatLaf* con los elementos indicados y con ellos duplicados en espejo, en la que los cambios en la primera parte de la interfaz, sea una imagen para la otra mitad de forma inmediata, excepto al primer campo de texto, que deberá mostrar el duplicado con el texto en *orden inverso*.
+Crea dentro de la carpeta `SOL` de tu repositorio local un nuevo proyecto Maven de Apache NetBeans llamado:
 
-Para ello habrá que hacer uso de los **eventos** relacionados con cada componente, para duplicarlos en su correspondiente elemento. 
+`practica2-3`
+
+Utiliza ramas para separar las distintas partes de la práctica.
+
+Como mínimo deberán existir:
+
+- `parte-1`
+- `parte-2`
+- `parte-3`
+- `parte-4`
+
+Cada parte deberá desarrollarse inicialmente en su rama correspondiente y posteriormente integrarse en `main`.
+
+Realiza commits descriptivos durante el desarrollo.
+
+La aplicación deberá utilizar **FlatLaf**, añadiendo la dependencia correspondiente al fichero `pom.xml`, tal y como se realizó en la práctica anterior.
+
+> Recuerda que todos los componentes utilizados en la interfaz desde código deberán tener nombres descriptivos.
+
+
+## Parte 1 Creación de componentes y sincronización mediante eventos
+
+Crea mediante el editor visual de Netbeans una interfaz mixta utilizando *FlatLaf* con los elementos indicados y con ellos duplicados en espejo.
+
+Los cambios en la primera parte de la interfaz, sea una imagen para la otra mitad de forma inmediata, excepto al primer campo de texto, que deberá mostrar el duplicado con el texto en *orden inverso*.
 
 Se hará uso de los siguientes **controles clásicos** de una interfaz:
 
@@ -21,30 +45,209 @@ Se hará uso de los siguientes **controles clásicos** de una interfaz:
 -   *1 Barra deslizadora (JSlider)*
 -   *1 JSpinner*
 
-
 ![](media/b659313c2f89bf08a4f35281a33b65c3.png)
 
-## Parte 2
+Puedes utilizar `JPanel` para organizar los componentes.
 
-Mejora el ejercicio anterior agregando lo siguiente:
-- Agrega un menú superior con las opciones *Archivo* y *Edición* y una **barra de estado inferior** haciendo uso de un *JPane*.
-    - El menú Edición deberá tener una entrada para 'borrar todo' que resetea el contenido.
-- Agrega un *1 JSplitPane* con dos colores que se duplique y muestra tambíen el porcentaje de la *JSlider* al moverse.   
-- Agrega una **validación** en tiempo real del campo de texto del **correo** en el que verifique que esté correctamente formado. 
-    - Mientras la validación del correo no sea correcta deberá de mostrar el cuadro de texto con un **borde en color rojo**.
-    - Al validarse correctamente, deberá mostrar un **JCheckbox** marcado y un mensaje en la **barra de estado** inferior.
-- Modifica las propiedades de los botones Redondo, ayuda, y las propiedades del JPassWordField utilizando propiedades de **Flatlaf**:
-    - El campo contraseña deberá tener un botón integrado para mostrar su contraseña.
-    - El botón redondo deberá de tener forma redonda.
-    - El botón ayuda deberá mostrar un icono de ayuda.
+### Sincronización de componentes
+
+Los cambios realizados en la zona superior deberán reflejarse automáticamente en el componente equivalente de la zona inferior. 
+Para ello habrá que hacer uso de los **eventos** relacionados con cada componente, para duplicarlos en su correspondiente elemento. 
+
+Así, por ejemplo:
+
+- al escribir en un campo de texto, el otro deberá actualizarse;
+- al marcar un `JCheckBox`, el correspondiente deberá cambiar al mismo estado;
+- al seleccionar una opción del `JComboBox`, el otro deberá seleccionar el mismo elemento;
+- al mover el `JSlider`, deberá actualizarse el segundo;
+- al modificar el `JSpinner`, deberá mostrarse el mismo valor en el otro.
+
+### Campos de texto en tiempo real
+
+La actualización de los JTextField deberá producirse mientras el usuario escribe, sin necesidad de pulsar Enter.
+
+
+### Sincronización de componentes
+
+El primero de los campos `JTextField` tendrá un comportamiento diferente.
+
+El texto escrito en el campo izquierdo deberá mostrarse en el campo derecho en orden inverso.
+
+### Uso de eventos
+
+Durante esta parte deberás utilizar al menos **cuatro tipos diferentes de eventos o listeners**.
+
+Por ejemplo:
+
+| Componente | Evento o listener |
+|---|---|
+| `JButton` | `ActionListener` |
+| `JCheckBox` | `ItemListener` |
+| `JComboBox` | `ActionListener` |
+| `JSlider` | `ChangeListener` |
+| `JSpinner` | `ChangeListener` |
+| `JTextField` | `DocumentListener` |
+
+## Parte 2 Menú, barra de estado y validación en tiempo real
+
+### Menú
+
+Amplía la ventana añadiendo una barra de menús mediante `JMenuBar`.
+
+Deberá contener como mínimo:
+
+```text
+Archivo
+Edición
+```
+
+**Menú Archivo**
+
+Añade al menos la opción:
+
+```text
+Salir
+```
+
+que deberá cerrar correctamente la aplicación.
+
+**Menú Edición**
+
+Añade la opción:
+
+```text
+Borrar todo
+```
+
+Al seleccionarla, todos los componentes deberán volver a su estado inicial.
+
+Evita realizar todas estas operaciones directamente dentro del evento del menú.
+
+### Barra de estado
+
+Añade un `JPanel` en la parte inferior de la ventana que funcione como **barra de estado**.
+
+Dentro puede incluirse un `JLabel`.
+
+Por ejemplo:
 
 ```java
-// para hacer un botón redondo o mostrar un botón de ayuda de entre distintas propiedades de Flatlaf
-boton.putClientProperty(FlatClientProperties.BUTTON_TYPE, FlatClientProperties.BUTTON_TYPE_ROUND_RECT); 
-boton.putClientProperty(FlatClientProperties.BUTTON_TYPE, FlatClientProperties.BUTTON_TYPE_HELP);
-````
+lblEstado
+```
+
+La barra deberá mostrar mensajes relacionados con algunas acciones de la aplicación.
+
+Por ejemplo:
+
+```text
+Formulario reiniciado
+Correo válido
+Selección modificada
+Tema actualizado
+```
+
+### Validación de correo en tiempo real
+
+Uno de los `JTextField` deberá utilizarse para introducir una dirección de correo electrónico.
+
+Mientras el usuario escribe deberá comprobarse si el formato es correcto.
+
+Puedes utilizar:
+
+```java
+matches(...)
+```
+
+con una expresión regular sencilla.
+
+Por ejemplo, deberá reconocer correctamente valores similares a:
+
+```text
+usuario@dominio.com
+```
+
+Cuando el correo no sea válido:
+
+- el campo deberá mostrar un borde de color rojo;
+- la barra de estado deberá indicar que el correo no es válido.
+
+Cuando el correo sea válido:
+
+- deberá recuperarse el borde normal;
+- deberá marcarse automáticamente un `JCheckBox` destinado a indicar que el correo es válido;
+- la barra de estado deberá mostrar un mensaje correspondiente.
+
+Crea un método auxiliar como:
+
+```java
+private boolean validarCorreo(String correo)
+```
+
+### Parte 3. Personalización con FlatLaf
+
+Utiliza algunas propiedades específicas de FlatLaf para modificar ciertos componentes.
+
+### Campo de contraseña
+
+Configura el `JPasswordField` para que permita mostrar u ocultar temporalmente la contraseña mediante un botón integrado.
+
+Investiga las propiedades disponibles en:
+
+```java
+FlatClientProperties
+```
+
+para conseguir este comportamiento.
+
+---
+
+### Botón redondeado
+
+Uno de los botones deberá utilizar un estilo redondeado mediante:
+
+```java
+FlatClientProperties.BUTTON_TYPE
+```
+
+con:
+
+```java
+FlatClientProperties.BUTTON_TYPE_ROUND_RECT
+```
+
+Por ejemplo:
+
+```java
+btnRedondo.putClientProperty(
+    FlatClientProperties.BUTTON_TYPE,
+    FlatClientProperties.BUTTON_TYPE_ROUND_RECT
+);
+```
+
+
+---
+
+### Botón de ayuda
+
+Otro botón deberá utilizar el estilo específico de ayuda proporcionado por FlatLaf.
+
+Puedes utilizar:
+
+```java
+btnAyuda.putClientProperty(
+    FlatClientProperties.BUTTON_TYPE,
+    FlatClientProperties.BUTTON_TYPE_HELP
+);
+```
+
+Al pulsarlo deberá mostrarse un `JOptionPane` con una breve explicación sobre la aplicación.
+
 
 ![](media/b659313c2f89bf08a4f35281a33b65c4.png)
+
+## Documentación
+
+
 
 ## Pruebas (testing) 
 
