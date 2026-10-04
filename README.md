@@ -1,75 +1,70 @@
-# Práctica 2.3 – Elementos combobox
+# Práctica 2.4 – Elementos interfaz mixta
 
-El objetivo es aprender a manipular modelos de datos en un *combobox*, controlar duplicados y personalizar la interfaz gráfica mediante eventos así como aplicar un Look and Feel moderno mediante una librería externa en *Maven*.
+El objetivo de esta práctica es profundizar en el manejo de los componentes clásicos de Swing y en la gestión de eventos para construir una interfaz gráfica interactiva y simétrica, aplicando además el uso de la librería FlatLaf para personalizar la apariencia visual.
 
-Utiliza *branches* para delimitar los cambios entre las `partes` que vayas haciendo.
+Crea un proyecto llamado *practica2-4* en la carpeta SOL de github. Utiliza *branches* para delimitar los cambios que vayas haciendo.
 
 ## Parte 1
 
-- Crea un nuevo proyecto de tipo **Maven**.
-- Crea una ventana que permita agregar elementos al listado de un *combobox* al darle al botón añadir.
-- La interfaz debe **evitar duplicados**: no se podrán introducir elementos repetidos en el combobox.
+Crear una interfaz mixta utilizando *FlatLaf* con los elementos indicados y con ellos duplicados en espejo, en la que los cambios en la primera parte de la interfaz, sea una imagen para la otra mitad de forma inmediata, excepto al primer campo de texto, que deberá mostrar el duplicado con el texto en *orden inverso*.
 
-![](media/9d5dec85d5a68aeb8e5ba53d5fd897f7.png)
+Para ello habrá que hacer uso de los **eventos** relacionados con cada componente, para duplicarlos en su correspondiente elemento. 
 
+Se hará uso de los siguientes **controles clásicos** de una interfaz:
+
+-   *2 Campos de texto (JTextField)*
+-   *1 Campo de Password (JPasswordField)*
+-   *3 Botones (JButtons)*
+-   *3 Radio buttons (JRadiobutton)*
+-   *3 Casillas verificación (JCheckbox)*
+-   *1 Listado (JCombobox)*
+-   *1 Barra deslizadora (JSlider)*
+-   *1 JSpinner*
+
+
+![](media/b659313c2f89bf08a4f35281a33b65c3.png)
 
 ## Parte 2
 
-Se va a mejorar el ejercicio anterior con nuevos botones y un Look and Feel moderno:
+Mejora el ejercicio anterior agregando lo siguiente:
+- Agrega un menú superior con las opciones *Archivo* y *Edición* y una **barra de estado inferior** haciendo uso de un *JPane*.
+    - El menú Edición deberá tener una entrada para 'borrar todo' que resetea el contenido.
+- Agrega un *1 JSplitPane* con dos colores que se duplique y muestra tambíen el porcentaje de la *JSlider* al moverse.   
+- Agrega una **validación** en tiempo real del campo de texto del **correo** en el que verifique que esté correctamente formado. 
+    - Mientras la validación del correo no sea correcta deberá de mostrar el cuadro de texto con un **borde en color rojo**.
+    - Al validarse correctamente, deberá mostrar un **JCheckbox** marcado y un mensaje en la **barra de estado** inferior.
+- Modifica las propiedades de los botones Redondo, ayuda, y las propiedades del JPassWordField utilizando propiedades de **Flatlaf**:
+    - El campo contraseña deberá tener un botón integrado para mostrar su contraseña.
+    - El botón redondo deberá de tener forma redonda.
+    - El botón ayuda deberá mostrar un icono de ayuda.
 
-- Agrega un botón Agregar todo que incluya de golpe todos los módulos del curso en el combobox.
-- Agrega un botón Borrar todo que vacíe el combobox.
-- Cambiar el **Look and Feel** de la ventana por defecto para que utilice **flatLaf**, una librería moderna actual que permite dar un aspecto profesional y moderno a las interfaces Swing:
-    - Para ello deberás añadir a tu fichero `pom.xml` las líneas necesarias para agregar dependencias buscando en el [repositorio oficial de Maven](https://mvnrepository.com/) la última versión de flaLaf (Flat Look and Feel).
-    - Después deberás de agregar el *import* y utilizarlo en el *main* de la clase, editando el código ya propuesto de la línea *Look and feel setting code (optional)* para usar flatLaf.
- 
+```java
+// para hacer un botón redondo o mostrar un botón de ayuda de entre distintas propiedades de Flatlaf
+boton.putClientProperty(FlatClientProperties.BUTTON_TYPE, FlatClientProperties.BUTTON_TYPE_ROUND_RECT); 
+boton.putClientProperty(FlatClientProperties.BUTTON_TYPE, FlatClientProperties.BUTTON_TYPE_HELP);
+````
 
-
-## Parte 3
-
-En esta se va a mejorar la interactividad y la personalización de la aplicación agregando nuevas funcionalidades:
-
-1. **Selección de Look and Feel**
-    - Crea un nuevo combobox que permita elegir entre tres estilos visuales para la aplicación:
-        - Clásico (Look and Feel por defecto de Swing, Nimbus o el del sistema operativo).
-        - FlatLaf Light (tema claro moderno).
-        - FlatLaf Dark (tema oscuro moderno).
-2. **Gestión de cursos y módulos**
-    - Añade otro combobox para seleccionar el curso: Primero o Segundo.
-    - Cuando se agregue un módulo de forma manual, el nombre debe incluir al principio 1º o 2º según el curso seleccionado.
-    - El botón Agregar todos debe cargar únicamente los módulos correspondientes al curso elegido.
-3. **Eliminación de elementos individuales**
-    - Agrega un botón que permita borrar únicamente el módulo seleccionado del combobox de módulos.
-    - Este botón debe mostrar un icono de papelera en lugar de texto para representar de manera visual la acción de eliminar.
-
-![](media/9d5dec85d5a68aeb8e5ba53d5234234.png)
-
+![](media/b659313c2f89bf08a4f35281a33b65c4.png)
 
 ## Pruebas (testing) 
 
-Deberá de subirse a la carpeta `TESTING` con el resultado verificado (OK/No cumple)
+| ID Caso Prueba | Descripción Caso de Prueba                       | Entrada / Acción                                       | Salida Esperada                                                                                 | Resultado    |
+| -------------- | ------------------------------------------------ | ------------------------------------------------------ | ----------------------------------------------------------------------------------------------- | ------------ |
+| 01             | Verificar campos de texto (`JTextField`)         | Escribir texto en el primer campo                      | Se duplica en la otra mitad en orden inverso                                                    | OK/No cumple |
+| 02             | Verificar campos de texto (`JTextField`)         | Escribir texto en el segundo campo                     | Se duplica igual en la otra mitad                                                               | OK/No cumple |
+| 03             | Verificar campo contraseña (`JPasswordField`)    | Escribir una contraseña                                | Se duplica en la otra mitad (oculta). Permite mostrar u ocultar el texto con el botón integrado | OK/No cumple |
+| 04             | Verificar botones (`JButton`)                    | Pulsar los botones                                     | Su acción se refleja en el botón duplicado                                                      | OK/No cumple |
+| 05             | Verificar botón redondo (`FlatLaf`)              | Observar el botón redondo                              | Tiene forma redonda según la propiedad FlatLaf                                                  | OK/No cumple |
+| 06             | Verificar botón de ayuda (`FlatLaf`)             | Pulsar el botón ayuda                                  | Muestra un icono de ayuda y/o mensaje emergente                                                 | OK/No cumple |
+| 07             | Verificar Radio Buttons (`JRadioButton`)         | Cambiar la selección de un grupo de radio buttons      | Se duplica en la otra mitad y se respeta la exclusividad de grupo                               | OK/No cumple |
+| 08             | Verificar Casillas de verificación (`JCheckBox`) | Marcar y desmarcar una casilla                         | Se duplica el estado en la otra mitad                                                           | OK/No cumple |
+| 09             | Verificar Listado (`JComboBox`)                  | Cambiar el valor seleccionado                          | Se actualiza en la otra mitad                                                                   | OK/No cumple |
+| 10             | Verificar Spinner (`JSpinner`)                   | Cambiar el valor                                       | Se duplica el valor en la otra mitad                                                            | OK/No cumple |
+| 11             | Verificar Barra deslizadora (`JSlider`)          | Deslizar la barra                                      | Se duplica en la otra mitad y se muestra el porcentaje                                          | OK/No cumple |
+| 12             | Verificar `JSplitPane`                           | Cambiar el tamaño de las divisiones                    | Se refleja el color o posición en ambas mitades                                                 | OK/No cumple |
+| 13             | Verificar Menú “Archivo”                         | Desplegar el menú                                      | Se muestran las opciones correspondientes                                                       | OK/No cumple |
+| 14             | Verificar Menú “Edición → Borrar todo”           | Seleccionar “Borrar todo”                              | Todos los campos y selecciones se restablecen                                                   | OK/No cumple |
+| 15             | Verificar Barra de estado (`JPanel` inferior)    | Realizar distintas acciones                            | Muestra mensajes contextuales (validación, acciones, etc.)                                      | OK/No cumple |
+| 16             | Validación campo correo (incorrecto)             | Escribir correo sin formato válido                     | Se muestra borde rojo                                                                           | OK/No cumple |
+| 17             | Validación campo correo (correcto)               | Escribir correo con formato correcto (con @ y dominio) | Borde normal, se marca checkbox verde y muestra mensaje en barra de estado                      | OK/No cumple |
 
-### Tabla pruebas parte 1 y 2 ✅
-
-| ID Caso Prueba | Descripción Caso de Prueba        | Entrada                | Salida Esperada                                                     | Resultado    |
-| -------------- | --------------------------------- | ---------------------- | ------------------------------------------------------------------- | ------------ |
-| 01             | Comprobación del botón "Agregar"  | Texto del campo módulo | Se agrega el texto del módulo al combobox.                          | OK/No cumple |
-| 02             | Validación de duplicados          | Texto ya existente     | No permite agregar un campo duplicado y avisa con un mensaje modal. | OK/No cumple |
-| 03             | Botón "Agregar todo"              | N/D                    | Agrega todos los módulos del curso al combobox.                     | OK/No cumple |
-| 04             | Botón "Borrar todo"               | N/D                    | Borra todo el contenido del combobox.                               | OK/No cumple |
-| 05             | Look and Feel inicial con FlatLaf | N/D                    | La aplicación inicia con el Look and Feel FlatLaf aplicado.         | OK/No cumple |
-
-
-
-### Tabla pruebas parte 3 ✅
-
-| ID Caso Prueba | Descripción Caso de Prueba                | Entrada                           | Salida Esperada                                                                  | Resultado    |
-| -------------- | ----------------------------------------- | --------------------------------- | -------------------------------------------------------------------------------- | ------------ |
-| 01             | Selección de Look and Feel: clásico       | Seleccionar "Clásico" en combo    | La aplicación cambia al Look and Feel del sistema/Nimbus.                        | OK/No cumple |
-| 02             | Selección de Look and Feel: FlatLaf Light | Seleccionar "FlatLaf Light"       | La aplicación cambia al estilo FlatLaf claro.                                    | OK/No cumple |
-| 03             | Selección de Look and Feel: FlatLaf Dark  | Seleccionar "FlatLaf Dark"        | La aplicación cambia al estilo FlatLaf oscuro.                                   | OK/No cumple |
-| 04             | Selección combobox curso                  | Seleccionar "Primero" o "Segundo" | Los módulos añadidos manualmente llevan prefijo `1º` o `2º` según el curso.      | OK/No cumple |
-| 05             | Botón "Agregar todo" con curso elegido    | Seleccionar curso y pulsar botón  | Se agregan todos los módulos correspondientes al curso seleccionado.             | OK/No cumple |
-| 06             | Botón "Borrar elemento"                   | Seleccionar un módulo en combo    | El módulo seleccionado se elimina del combobox y el botón muestra icono papelera | OK/No cumple |
-
- 
