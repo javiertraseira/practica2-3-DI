@@ -361,8 +361,6 @@ Incluye una tabla similar a la siguiente:
 
 ## Pruebas (testing) 
 
-# Comprobación final
-
 Antes de entregar la práctica comprueba:
 
 - [ ] El proyecto es Maven.
