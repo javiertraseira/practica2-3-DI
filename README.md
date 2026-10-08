@@ -25,8 +25,9 @@ Realiza commits descriptivos durante el desarrollo.
 
 La aplicación deberá utilizar **FlatLaf**, añadiendo la dependencia correspondiente al fichero `pom.xml`, tal y como se realizó en la práctica anterior.
 
-> Recuerda que todos los componentes utilizados en la interfaz desde código deberán tener nombres descriptivos.
+> Recuerda que todos los componentes utilizados en la interfaz desde código deberán tener nombres descriptivos. 
 
+Utiliza los *Issues* cuando lo creas necesario para ayudarte en el avance del desarrollo.
 
 ## Parte 1 Creación de componentes y sincronización mediante eventos
 
@@ -56,11 +57,11 @@ Para ello habrá que hacer uso de los **eventos** relacionados con cada componen
 
 Así, por ejemplo:
 
-- al escribir en un campo de texto, el otro deberá actualizarse;
-- al marcar un `JCheckBox`, el correspondiente deberá cambiar al mismo estado;
-- al seleccionar una opción del `JComboBox`, el otro deberá seleccionar el mismo elemento;
-- al mover el `JSlider`, deberá actualizarse el segundo;
-- al modificar el `JSpinner`, deberá mostrarse el mismo valor en el otro.
+- Al escribir en un campo de texto, el otro deberá actualizarse.
+- Al marcar un `JCheckBox`, el correspondiente deberá cambiar al mismo estado.
+- Al seleccionar una opción del `JComboBox`, el otro deberá seleccionar el mismo elemento.
+- Al mover el `JSlider`, deberá actualizarse el segundo.
+- Al modificar el `JSpinner`, deberá mostrarse el mismo valor en el otro.
 
 ### Campos de texto en tiempo real
 
@@ -168,14 +169,14 @@ usuario@dominio.com
 
 Cuando el correo no sea válido:
 
-- el campo deberá mostrar un borde de color rojo;
-- la barra de estado deberá indicar que el correo no es válido.
+- El campo deberá mostrar un borde de color rojo.
+- La barra de estado deberá indicar que el correo no es válido.
 
 Cuando el correo sea válido:
 
-- deberá recuperarse el borde normal;
-- deberá marcarse automáticamente un `JCheckBox` destinado a indicar que el correo es válido;
-- la barra de estado deberá mostrar un mensaje correspondiente.
+- Deberá recuperarse el borde normal.
+- Deberá marcarse automáticamente un `JCheckBox` destinado a indicar que el correo es válido.
+- La barra de estado deberá mostrar un mensaje correspondiente.
 
 Crea un método auxiliar como:
 
@@ -332,9 +333,9 @@ El objetivo es comenzar a separar la **lógica de procesamiento** de la **interf
 
 Utiliza **Javadoc** para documentar:
 
-- la clase `Asalariado`;
-- sus constructores;
-- al menos dos métodos de cálculo.
+- La clase `ProcesadorFormulario`.
+- Sus constructores.
+- Al menos dos métodos utilizados.
 
 ### Documentación online
 
