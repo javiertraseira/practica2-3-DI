@@ -44,7 +44,6 @@ Se hará uso de los siguientes **controles clásicos** de una interfaz:
 -   *1 Listado (JCombobox)*
 -   *1 Barra deslizadora (JSlider)*
 -   *1 JSpinner*
--   *1 JSplitPane* con dos colores
 
 ![](media/b659313c2f89bf08a4f35281a33b65c3.png)
 
