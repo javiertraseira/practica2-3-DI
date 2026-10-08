@@ -183,7 +183,7 @@ Crea un método auxiliar como:
 private boolean validarCorreo(String correo)
 ```
 
-### Parte 3. Personalización con FlatLaf
+## Parte 3. Personalización con FlatLaf
 
 Utiliza algunas propiedades específicas de FlatLaf para modificar ciertos componentes.
 
@@ -255,7 +255,7 @@ btnAyuda.putClientProperty(
 ![](media/b659313c2f89bf08a4f35281a33b65c4.png)
 
 
-# Parte 4. Lógica y procesamiento de datos
+## Parte 4. Lógica y procesamiento de datos
 
 Añade una pequeña capa de **lógica** que permita procesar los datos introducidos en la interfaz.
 
