@@ -254,6 +254,78 @@ btnAyuda.putClientProperty(
 
 ![](media/b659313c2f89bf08a4f35281a33b65c4.png)
 
+
+# Parte 4. Lógica y procesamiento de datos
+
+Añade una pequeña capa de **lógica** que permita procesar los datos introducidos en la interfaz.
+
+Crea una clase independiente llamada:
+
+```java
+ProcesadorFormulario
+```
+
+Esta clase no deberá contener componentes Swing. Su función será únicamente procesar información recibida desde la interfaz.
+
+Implementa al menos los siguientes métodos:
+
+```java
+public int calcularPuntuacion(int valorSlider, int valorSpinner, int opcionesSeleccionadas)
+```
+
+```java
+public String obtenerCategoria(int puntuacion)
+```
+
+La puntuación se calculará utilizando los valores del `JSlider`, del `JSpinner` y el número de `JCheckBox` seleccionados.
+
+Puedes utilizar, por ejemplo:
+
+```java
+puntuacion = valorSlider
+        + valorSpinner * 10
+        + opcionesSeleccionadas * 5;
+```
+
+A partir de la puntuación obtenida, devuelve una categoría:
+
+```text
+0 - 30      → Nivel bajo
+31 - 60     → Nivel medio
+61 o más    → Nivel alto
+```
+
+Añade también en la ventana principal un método auxiliar para contar cuántos `JCheckBox` están seleccionados:
+
+Finalmente, utiliza uno de los botones de la interfaz para:
+
+1. Recoger los valores actuales de los componentes.
+2. Contar las opciones seleccionadas.
+3. Enviar los datos a `ProcesadorFormulario`.
+4. Obtener la puntuación y la categoría.
+5. Mostrar un resumen mediante `JOptionPane`.
+
+El resumen deberá incluir, como mínimo:
+
+- valor del `JSlider`;
+- valor del `JSpinner`;
+- número de opciones seleccionadas;
+- puntuación obtenida;
+- categoría resultante.
+
+Por ejemplo:
+
+```text
+Valor slider: 25
+Valor spinner: 2
+Opciones seleccionadas: 3
+
+Puntuación: 60
+Categoría: Nivel medio
+```
+
+El objetivo es comenzar a separar la **lógica de procesamiento** de la **interfaz gráfica**, evitando realizar todos los cálculos directamente dentro del evento del botón.
+
 ## Documentación
 
 Añade a una carpeta `docs\` del repositorio un fichero:
