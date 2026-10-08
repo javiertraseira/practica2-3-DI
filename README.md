@@ -328,11 +328,17 @@ El objetivo es comenzar a separar la **lógica de procesamiento** de la **interf
 
 ## Documentación
 
-Añade a una carpeta `docs\` del repositorio un fichero:
+### Documentación del código
 
-```text
-README.md
-```
+Utiliza **Javadoc** para documentar:
+
+- la clase `Asalariado`;
+- sus constructores;
+- al menos dos métodos de cálculo.
+
+### Documentación online
+
+Crea una carpeta `docs` en el repositorio y dentro un archivo `index.md`.
 
 Que incluya como mínimo:
 
@@ -351,7 +357,6 @@ Incluye una tabla similar a la siguiente:
 | `JButton` | `ActionListener` | Detectar pulsaciones |
 | `JCheckBox` | `ItemListener` | Detectar cambios de estado |
 | `JSlider` | `ChangeListener` | Detectar cambios de valor |
-
 
 
 ## Pruebas (testing) 
