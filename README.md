@@ -239,8 +239,8 @@ btnAyuda.putClientProperty(
     FlatClientProperties.BUTTON_TYPE_HELP
 );
 ```
-
-Al pulsarlo deberá mostrarse un `JOptionPane` con una breve explicación sobre la aplicación.
+- Tendrá un `Tooltip` que muestre informe de que al pulsar el botón se mostrará información de ayuda.
+- Al pulsarlo deberá mostrarse un `JOptionPane` con una breve explicación sobre la aplicación.
 
 
 ![](media/b659313c2f89bf08a4f35281a33b65c4.png)
