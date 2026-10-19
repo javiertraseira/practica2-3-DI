@@ -201,29 +201,6 @@ FlatClientProperties
 para conseguir este comportamiento.
 
 
-### Botón redondeado
-
-Uno de los botones deberá utilizar un estilo redondeado mediante:
-
-```java
-FlatClientProperties.BUTTON_TYPE
-```
-
-con:
-
-```java
-FlatClientProperties.BUTTON_TYPE_ROUND_RECT
-```
-
-Por ejemplo:
-
-```java
-btnRedondo.putClientProperty(
-    FlatClientProperties.BUTTON_TYPE,
-    FlatClientProperties.BUTTON_TYPE_ROUND_RECT
-);
-```
-
 ### Texto de ayuda en un campo
 
 Configura uno de los `JTextField` para que muestre un texto de ayuda mientras esté vacío utilizando una propiedad de FlatLaf.
@@ -237,7 +214,7 @@ txtCorreo.putClientProperty(
 );
 ```
 
-### Botón de ayuda
+### Botón redondeado de ayuda
 
 Otro botón deberá utilizar el estilo específico de ayuda proporcionado por FlatLaf.
 
