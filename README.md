@@ -10,6 +10,8 @@ Crea dentro de la carpeta `SOL` de tu repositorio local un nuevo proyecto Maven 
 
 `practica2-3`
 
+Utiliza la versión de *Java 21* LTS en tu proyecto.
+
 Utiliza ramas para separar las distintas partes de la práctica.
 
 Como mínimo deberán existir:
